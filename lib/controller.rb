@@ -11,13 +11,23 @@ class Controller
 	def self.get_all_words()
 		@@words
 	end
+
+	def self.find_by_id(identifier)
+		wordtoreturn=nil
+		@@words.each() do |wordobj|
+			if wordobj.id.eql?(identifier)
+				wordtoreturn=wordobj
+			end
+		end
+		wordtoreturn
+	end
 end
 #class to hold Word object
 class Word
 	attr_accessor(:word,:id)
 	@@definitions=[]
-	def initialize(word) 
-		@word=word
+	def initialize(xword) 
+		@word=xword
 		@id=0
 	end
 
