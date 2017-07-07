@@ -3,9 +3,9 @@ class Controller
 	def initialize()
 	end
 
-	def self.new_word(word)
-		word.id=@@words.length().+(1)
-		@@words.push(word)
+	def self.newWord(xx)
+		xx.id=@@words.length().+(1)
+		@@words.push(xx)
 	end
 
 	def self.get_all_words()
@@ -26,8 +26,8 @@ end
 class Word
 	attr_accessor(:word,:id)
 	@@definitions=[]
-	def initialize(xword) 
-		@word=xword
+	def initialize(stringvalue) 
+		@word=stringvalue
 		@id=0
 	end
 
@@ -45,7 +45,7 @@ end
 class Definition
 	attr_accessor(:definition,:id)
 	def initialize(string)
-		@definition=string
+		@definition=string.to_s
 		@id=0
 	end
 end
