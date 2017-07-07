@@ -20,5 +20,9 @@ RSpec.describe Word do
 			word=Word.new("My Word")
 			expect(word.word).to eq 'My Word'
 		end
+		it 'creates an id property to the word with an initial value of 0' do
+			word=Word.new("Another Word")
+			expect(word.id).to eq 0
+		end
 	end
 end
