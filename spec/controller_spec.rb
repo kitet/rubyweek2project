@@ -26,3 +26,13 @@ RSpec.describe Word do
 		end
 	end
 end
+
+RSpec.describe Controller do
+	context "initializes a controller class that enables easy manipulation of word and definition objects" do
+		it 'enables addition of word to words array' do
+			myword=Word.new("My New Word")
+			Controller.new_word(myword)
+			expect(Controller.get_all_words()[0]).to eq myword
+		end
+	end
+end
