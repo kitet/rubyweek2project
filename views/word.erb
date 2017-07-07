@@ -1,1 +1,13 @@
-<%= @returnedword.id()%>
+<div class="row">
+	<div class="col-md-2">
+		<p><%= @returnedword.word()%>
+		</p>
+	</div>
+	<div class="col-md-5">
+		<form class="form-group" method="post" action="/word">
+			<label>Enter Definition</label>
+			<textarea class="form-control" type="text" name='definition'></textarea>
+			<button class="btn btn-success" type="submit">Save Definition</button>
+		</form>
+	</div>
+</div>
