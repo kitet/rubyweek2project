@@ -13,9 +13,9 @@ get '/new_word' do
 end
 
 post '/new_word' do
-	word=params['word']
+	word=params['newword']
 	newword=Word.new(word)
-	Controller.new_word(newword)
+	Controller.newWord(newword)
 	erb :success
 end
 
