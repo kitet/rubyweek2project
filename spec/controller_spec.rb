@@ -13,3 +13,12 @@ RSpec.describe Definition  do
 		end
 	end
 end
+
+RSpec.describe Word do
+	context 'creates a word object to hold word string and its id' do
+		it 'takes string argument and create a Word Object of that string' do
+			word=Word.new("My Word")
+			expect(word.word).to eq 'My Word'
+		end
+	end
+end
