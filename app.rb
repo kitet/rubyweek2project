@@ -21,5 +21,15 @@ end
 
 get '/word/:id' do
 	@returnedword=Controller.find_by_id(params['id'].to_i)
+	@definitions=@returnedword.all_definitions
 	erb :word
+end
+
+post '/word/:id' do
+	@returnedword=Controller.find_by_id(params['id'].to_i)
+	definition=params['definition']
+	mydef=Definition.new(definition)
+	@returnedword.add_definition(mydef)
+	@definitions=@returnedword.all_definitions
+	erb :success
 end
