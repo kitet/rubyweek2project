@@ -1,1 +1,6 @@
-<h1>Header Here</h1>
+<h1>All Words In Our Dictionary</h1>
+<ul>
+	<% @listedwordobjects.each() do |item|%>
+	<li><a href="word/<%= item.id%>"><p class="text-primary"><%= item.id() %></p></li>
+	<% end %>
+</ul>
