@@ -20,6 +20,6 @@ post '/new_word' do
 end
 
 get '/word/:id' do
-	@word=Controller.find_by_id(params.fetch('id').to_i())
+	@returnedword=Controller.find_by_id(params['id'].to_i)
 	erb :word
 end
