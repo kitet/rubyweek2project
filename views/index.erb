@@ -1,3 +1,7 @@
+<!--
+Home page. shows a looping through Word object arrays showing each word 
+The Word's string is accessed using the word method created by attr_accessor as seen in the helper class
+-->
 <h1>All Words In Our Dictionary</h1>
 	<% @listedwordobjects.each() do |item |%>
 	<a href="word/<%= item.id%>"><p class="text-primary"><%= item.word()%></p>
