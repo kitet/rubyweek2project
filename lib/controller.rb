@@ -1,11 +1,12 @@
+#control class acting as parent to access the two word and definition objects
 class Controller
 	@@words=[]
 	def initialize()
 	end
 
-	def self.newWord(xx)
-		xx.id=@@words.length().+(1)
-		@@words.push(xx)
+	def self.newWord(newword)
+		newword.id=@@words.length().+(1)
+		@@words.push(newword)
 	end
 
 	def self.get_all_words()
@@ -22,30 +23,32 @@ class Controller
 		wordtoreturn
 	end
 end
+
 #class to hold Word object
 class Word
-	attr_accessor(:word,:id)
-	@@definitions=[]
+	attr_accessor(:word,:id,:definitions)
 	def initialize(stringvalue) 
 		@word=stringvalue
 		@id=0
+		@definitions=[]
 	end
 
 	def add_definition(definition)
-		mydef=Definition.new(definition)
-		mydef.id=@@definitions.length().+(1)
-		@@definitions.push(mydef)
+		mydef=definition
+		mydef.id=@definitions.length().+(1)
+		@definitions.push(mydef)
 	end
 
 	def all_definitions()
-		@@definitions
+		@definitions
 	end
 end
+
 #class to hold Definition object
 class Definition
-	attr_accessor(:definition,:id)
+	attr_accessor(:content,:id)
 	def initialize(string)
-		@definition=string.to_s
+		@content=string
 		@id=0
 	end
 end
