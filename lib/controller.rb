@@ -1,3 +1,4 @@
+#Helper class to control Word and Definition objects through Controller class that can be used to manipulate these 
 #control class acting as parent to access the two word and definition objects
 class Controller
 	@@words=[]
