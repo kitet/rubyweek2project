@@ -13,6 +13,7 @@ get '/new_word' do
 end
 
 post '/new_word' do
+	newword=nil
 	word=params['newword']
 	newword=Word.new(word)
 	Controller.newWord(newword)
@@ -20,16 +21,19 @@ post '/new_word' do
 end
 
 get '/word/:id' do
-	@returnedword=Controller.find_by_id(params['id'].to_i)
+	@returnedword=nil
+	@returnedword=Controller.find_by_id(params.fetch('id').to_i)
 	@definitions=@returnedword.all_definitions
+	@showFrom=false
 	erb :word
 end
 
 post '/word/:id' do
-	@returnedword=Controller.find_by_id(params['id'].to_i)
+	returnedword=nil
+	@returnedword=Controller.find_by_id(params.fetch('id').to_i)
 	definition=params['definition']
 	mydef=Definition.new(definition)
 	@returnedword.add_definition(mydef)
 	@definitions=@returnedword.all_definitions
-	erb :success
+	erb :word
 end
