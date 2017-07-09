@@ -1,3 +1,6 @@
+#Ruby file to execute unit testing on diffenrent logic on the controller file
+#test for all the three class create in the /lib/controller file
+#
 require 'rspec'
 require 'controller'
 
@@ -18,7 +21,7 @@ RSpec.describe Word do
 	context 'creates a word object to hold word string and its id' do
 		it 'takes string argument and create a Word Object of that string' do
 			word=Word.new("My Word")
-			expect(word.word).to eq 'My Word'
+			expect(word.word).to eq 'sMy Word'
 		end
 		it 'creates an id property to the word with an initial value of 0' do
 			word=Word.new("Another Word")
